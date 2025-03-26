@@ -1,0 +1,165 @@
+{% extends "base.html" %}
+
+{% block title %}Sequence Prediction{% endblock %}
+
+{% block content %}
+    <style>
+        nav.navbar {
+            padding: 5px 16px !important;
+        }
+    </style>
+    <h2 class="title">StAck-SulSite: A deep learning-based stacking framework for accurate identification of S-sulfenylation sites
+    </h2>
+    <div class="prediction-box">
+        <h4>Paste input FASTA</h4>
+        <p><small>Only FASTA notation supported</small></p>
+        <form method="POST">
+            <div class="mb-3">
+                <textarea class="form-control" id="sequence" name="sequence" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-submit">Submit</button>
+            <button type="reset" class="btn btn-clear">Clear</button>
+            <button type="button" class="btn btn-insert-example" id="insertExample">Insert Example</button>
+        </form>
+    </div>
+
+    {% if result %}
+    <div class="mt-4">
+        {% if result == "Sequence not found in database." %}
+            <div class="alert alert-danger">{{ result }}</div>
+        {% else %}
+            <h4>Prediction Results:</h4>
+            <ul class="list-group w-50 mx-auto">
+                <li class="list-group-item"><strong>Sequence:</strong> {{ result.sequence }}</li>
+                <li class="list-group-item"><strong>Prediction Score:</strong> {{ result.prediction_score }}</li>
+                <li class="list-group-item"><strong>Classification:</strong> 
+                    <span class="badge bg-{% if result.classification == 'AVP' %}success{% else %}danger{% endif %}">
+                        {{ result.classification }}
+                    </span>
+                </li>
+            </ul>
+        {% endif %}
+    </div>
+    {% endif %}
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0000FF;
+        }
+        .prediction-box {
+            background-color: #B0C4DE;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            width: 50%;
+            margin: 100px auto 0;
+        }
+        textarea {
+            width: 100%;
+            height: 150px;
+            resize: none;
+        }
+
+        /* Modern Button Styling */
+        .btn {
+            margin: 10px;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Submit Button - Green */
+        .btn-submit {
+            background: linear-gradient(45deg, #28a745, #218838);
+            color: white;
+        }
+        .btn-submit:hover {
+            background: linear-gradient(45deg, #218838, #1e7e34);
+            transform: scale(1.05);
+        }
+
+        /* Clear Button - Red */
+        .btn-clear {
+            background: linear-gradient(45deg, #dc3545, #bd2130);
+            color: white;
+        }
+        .btn-clear:hover {
+            background: linear-gradient(45deg, #bd2130, #9c1c24);
+            transform: scale(1.05);
+        }
+
+        /* Insert Example Button - Blue */
+        .btn-insert-example {
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            color: white;
+        }
+        .btn-insert-example:hover {
+            background: linear-gradient(45deg, #0056b3, #004494);
+            transform: scale(1.05);
+        }
+
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 15px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        document.getElementById("insertExample").addEventListener("click", function() {
+            document.getElementById("sequence").value = `>Positive1
+QLERINDALSCEYECRRRMLM
+>Positive2
+SSGTSREKTACAINKVLMGRV
+>Positive3
+DFEKRGKKEVCPVLDQFLCHV
+>Positive4
+EGPVSSSSSDCRETEELVGSN
+>Negative1
+EEEEDELAHRCSSFMAPPVTD
+>Negative2
+LLILETQAQVCQALAQVDGGA
+>Negative3
+ERKEGGGGISCVLQDGCVFEK
+>Negative4
+LKTKDGKLPFCAMGVSSVIHP
+>Positive5
+GGISCVLQDGCVFEKAGVSIS
+>Positive6
+TKTILKSSLSCSLQEGLIPGS
+>Positive7
+TKFLSQIESDCLALLQVRAIL
+>Positive8
+TVDFIRLKSYCNDQSTGDIKV
+>Positive9
+EQATTSAQVACLYRKQSQIQN
+>Negative5
+DLKVLQQFAACFLETLPAQEE
+>Negative6
+KVIIREFQEHCRRGLLSNHTG
+>Negative7
+VYEKRPDFRMCWYVHPQVLQS
+>Negative8
+SFQQEHLPVPCQWSYVTSVPS`;
+        });
+    </script>
+
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+
+{% block title %}Researchers | StAck-SulSite{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Meet Our Researchers</h2>
+    <div class="row">
+        
+        <!-- Researcher 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card researcher-card">
+                <img src="{{ url_for('static', filename='images/hasan.jpg') }}" class="card-img-top" alt="Researcher 1">
+                <div class="card-body">
+                    <h5 class="card-title">Dr. SM Hasan Mahmud</h5>
+                    <p class="card-text"><strong>Associate Professor</strong><br>
+                        Department of Software Engineering,<br>
+                        Daffodil International University (DIU)</p>
+                    <p class="card-text">
+                        <strong>Email:</strong> <a href="mailto:drhasan.swe@diu.edu.bd" class="text-primary">drhasan.swe@diu.edu.bd</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Researcher 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card researcher-card">
+                <img src="{{ url_for('static', filename='images/faruk.jpg') }}" class="card-img-top" alt="Researcher 2">
+                <div class="card-body">
+                    <h5 class="card-title">Md. Faruk Hosen</h5>
+                    <p class="card-text"><strong>Lecturer</strong><br>
+                        Department of Computing and Information System,<br>
+                        Daffodil International University (DIU)<p>
+                    <p class="card-text">
+                        <strong>Email:</strong> <a href="mailto:farukictmbstu@gmail.com" class="text-primary">farukictmbstu@gmail.com</a>
+                    </p>
+                    <p class="card-text">
+                        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/faruk17035/" target="_blank" class="text-primary">Md. Faruk Hosen</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Researcher 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card researcher-card">
+                <img src="{{ url_for('static', filename='images/Goh.jpg') }}" class="card-img-top" alt="Researcher 5">
+                <div class="card-body">
+                    <h5 class="card-title">Dr. Goh Kah Ong Michael</h5>
+                    <p class="card-text"><strong>Associate Professor</strong><br>
+                        Faculty of Information Science & Technology<br>
+                        Multimedia University</p>
+                    <p class="card-text">
+                        <strong>Email:</strong> <a href="mailto:michael.goh@mmu.edu.my" class="text-primary">michael.goh@mmu.edu.my</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Researcher 4 -->
+        <div class="col-md-4 mb-4">
+            <div class="card researcher-card">
+                <img src="{{ url_for('static', filename='images/*.jpg') }}" class="card-img-top" alt="Researcher 4">
+                <div class="card-body">
+                    <h5 class="card-title">abc</h5>
+                    <p class="card-text"><strong>Lecturer</strong><br>
+                        Department of Computing and Information System,<br>
+                        Daffodil International University (DIU)
+                    </p>
+                    <p class="card-text">
+                        <strong>Email:</strong> <a href="mailto:farukictmbstu@gmail.com" class="text-primary">farukictmbstu@gmail.com</a>
+                    </p>
+                    <p class="card-text">
+                        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/faruk17035/" target="_blank" class="text-primary">Md. Faruk Hosen</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Researcher 5 -->
+        <div class="col-md-4 mb-4">
+            <div class="card researcher-card">
+                <img src="{{ url_for('static', filename='images/*.jpg') }}" class="card-img-top" alt="Researcher 5">
+                <div class="card-body">
+                    <h5 class="card-title">xyz</h5>
+                    <p class="card-text"><strong>Associate Professor</strong><br>
+                        Faculty of Information Science & Technology<br>
+                        Multimedia University</p>
+                    <p class="card-text">
+                        <strong>Email:</strong> <a href="mailto:michael.goh@mmu.edu.my" class="text-primary">michael.goh@mmu.edu.my</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .researcher-card {
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+    .researcher-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    }
+</style>
+
+{% endblock %}

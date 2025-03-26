@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algorithm</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Merriweather:wght@300;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="/index">StAck-SulSite</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/index">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="/algorithm">Algorithm</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/dataset">Dataset</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/researcher">Researcher</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="container content-container">
+        <h2 class="mb-4">End-to-End Workflow of the StAck-SulSite Model Development</h2>
+        <img src="{{ url_for('static', filename='images/Stacking.png') }}" alt="Flowchart" class="flowchart-image">
+        <p class="description">
+            A schematic representation of the <strong>StAck-SulSite</strong> pipeline, illustrating the full process from data preprocessing and feature extraction to model construction and classification
+        </p>
+    </div>
+
+
+    <footer class="footer">
+        <p>&copy; 2025 StAck-SulSite | All Rights Reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

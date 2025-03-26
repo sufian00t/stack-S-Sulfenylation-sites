@@ -1,0 +1,12 @@
+Welcome to StAck-SulSite Web Server
+To support the efficient identification of more accurate S-sulfenylation sites and provide broad access to the scientific community, we have designed and implemented the StAck-SulSite web server.
+
+How to Use the StAck-SulSite Web Server:
+Access the Web Server:
+Open the web server at https://stacksulsite.onrender.com/.
+Input Your Data:
+Enter your query in FASTA format into the provided text box.
+Submit for Prediction:
+Click on the “Submit” button to initiate the prediction process. The server typically processes the data within a few seconds.
+View Results:
+Once the prediction is complete, results will be displayed directly on the web server interface.

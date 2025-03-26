@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Dataset | StAck-SulSite{% endblock %}
+
+{% block content %}
+    <!-- Main Content -->
+    <div class="container">
+        <h2 class="title">Download the Dataset</h2>
+        <div class="content-box">
+
+            <h4>Training Dataset</h4>
+            <div>
+                <a href="{{ url_for('static', filename='datasets/SS_train_pos.zip') }}" class="btn btn-custom" download>Positive Dataset</a><br>
+                <a href="{{ url_for('static', filename='datasets/SS_train_neg.zip') }}" class="btn btn-custom" download>Negative Dataset</a><br><br>
+            </div>
+
+            <h4>Test Dataset</h4>
+            <div>
+                <a href="{{ url_for('static', filename='datasets/SS_test_pos.zip') }}" class="btn btn-custom" download>Positive Dataset</a><br>
+                <a href="{{ url_for('static', filename='datasets/SS_test_neg.zip') }}" class="btn btn-custom" download>Negative Dataset</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block styles %}
+    <style>
+        .btn-custom {
+            margin-top: 20px;
+            padding: 10px 15px;
+            font-size: 16px;
+            background-color: #c79c3d;
+            color: white;
+            border-radius: 10px;
+            display: inline-block;
+            font-weight: bold;
+            text-align: center;
+        }
+        .btn-custom:hover {
+            background-color: #c79c3d; /* Slightly darker shade for hover */
+            color: #333;
+        }
+    </style>
+{% endblock %}

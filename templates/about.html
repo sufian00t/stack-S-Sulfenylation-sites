@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% block title %}About - StAck-SulSite{% endblock %}
+
+{% block styles %}
+    <style>
+        /* Global Styles */
+        body {
+            background-color: #F4F1FF; /* Soft lavender */
+            font-family: 'Inter', sans-serif;
+            color: #222;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #4B0082; /* Deep Purple */
+            padding: 15px 0;
+        }
+
+        .navbar-brand {
+            font-size: 24px;
+            font-weight: 600;
+            color: #FFD700 !important; /* Golden Yellow */
+            font-family: 'Merriweather', serif;
+        }
+
+        .navbar-nav .nav-link {
+            color: #f0e6ff; /* Light purple */
+            margin-right: 15px;
+            font-size: 18px;
+            transition: 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover, 
+        .navbar-nav .nav-link.active {
+            color: #FFD700 !important; /* Golden Yellow Hover */
+            font-weight: 600;
+        }
+
+        /* Main Container */
+        .container {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        /* Title */
+        .title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #4B0082;
+            margin-bottom: 20px;
+        }
+
+        /* Content Box */
+        .content-box {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Steps Section */
+        .steps {
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        .steps h5 {
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        /* Flowchart Image */
+        .flowchart-image {
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+            box-shadow: 0px 6px 14px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .flowchart-image:hover {
+            transform: scale(1.02);
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #3A006D; /* Darker purple */
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 50px;
+            font-size: 16px;
+        }
+
+        .footer a {
+            color: #FFD700;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="title">Welcome to StAck-SulSite Web Server</h2>
+        <div class="content-box">
+            <p>To support the efficient identification of more accurate <strong>S-sulfenylation sites</strong> and provide broad access to the scientific community, we have designed and implemented the StAck-SulSite web server.</p>
+
+            <div class="steps">
+                <h5>How to Use the StAck-SulSite Web Server:</h5>
+                <ol>
+                    <li><strong>Access the Web Server:</strong><br> Open the web server at <a href="https://stacksulsite.onrender.com/" target="_blank">https://stacksulsite.onrender.com/</a>.</li>
+                    <li><strong>Input Your Data:</strong><br> Enter your query in FASTA format into the provided text box.</li>
+                    <li><strong>Submit for Prediction:</strong><br> Click on the “Submit” button to initiate the prediction process. The server typically processes the data within a few seconds.</li>
+                    <li><strong>View Results:</strong><br> Once the prediction is complete, results will be displayed directly on the web server interface.</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+{% endblock %}
